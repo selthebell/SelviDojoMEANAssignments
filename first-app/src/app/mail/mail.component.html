@@ -1,0 +1,16 @@
+<h3>Dojo Mail</h3>
+<table class="table table-striped">
+    <tr>
+        <td>Email</td>
+        <td>Importance</td>
+        <td>Subject</td>
+        <td>Content</td>
+    </tr>
+    <tr *ngFor='let email of emails'>
+        <td>{{email.email | lowercase }}</td>
+        <td *ngIf='email.importance'>High</td>
+        <td *ngIf='!email.importance'>Low</td>
+        <td>{{email.subject}}</td>
+        <td>{{email.content}}</td>
+    </tr>
+</table>
