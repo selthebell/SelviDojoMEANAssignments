@@ -3,11 +3,13 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { MailComponent } from './mail/mail.component';
+import { TimeZoneDisplay } from './timezonedisplay/timezonedisplay.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MailComponent
+    MailComponent,
+    TimeZoneDisplay,
   ],
   imports: [
     BrowserModule

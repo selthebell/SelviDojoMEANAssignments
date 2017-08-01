@@ -1,0 +1,20 @@
+<section>
+    <div>
+        <button name='pst' (click)='getTimeZone("PST")' [ngStyle]="{'background-color':selectedZone==='PST'?'yellow':''}">
+            PST
+        </button>
+        <button name='mst' (click)='getTimeZone("MST")' [ngStyle]="{'background-color':selectedZone==='MST'?'yellow':''}">
+            MST
+        </button>
+        <button name='cst' (click)='getTimeZone("CST")' [ngStyle]="{'background-color':selectedZone==='CST'?'yellow':''}">
+            CST
+        </button>
+        <button name='est' (click)='getTimeZone("EST")' [ngStyle]="{'background-color':selectedZone==='EST'?'yellow':''}">
+            EST
+        </button>
+        <button name='clear' (click)='getTimeZone("CLEAR")' [ngStyle]="{'background-color':selectedZone==='CLEAR'?'':''}">
+            CLEAR
+        </button>
+    </div>
+    <div>{{dt | date:'short'}}</div>
+</section>
