@@ -1,0 +1,31 @@
+<h1>Welcome to bicycle listing</h1>
+<div>
+  Search:
+  <input type="text" [(ngModel)]='filter.title' placeholder='Title'>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>
+        Desc
+      </th>
+      <th>Price</th>
+      <th>Location</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr  [routerLink]="['/bicycles', bicycle._id]" *ngFor='let bicycle of bicycleList | search:filter' [class.selected]='' >
+      <td>{{bicycle.title}}&{{bicycle.user}}</td>
+      <td>{{bicycle.desc}}&{{bicycle.user !== userid}}</td>
+      <td>{{bicycle.price}}</td>
+      <td>{{bicycle.location}}</td>
+      <td>
+        <button   [hidden]="(bicycle.user !== userid)" (click) = 'removeBicycle(bicycle)'>Remove</button>
+        <button  [hidden]="(bicycle.user !== userid)" >Update</button>
+        <button [hidden]="(bicycle.user === userid)" (click) = 'contact()' >Contact</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

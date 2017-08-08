@@ -1,0 +1,14 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand">Bicycle Listings</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li *ngIf="!isAuthed()"><a routerLink='/home'>Home</a></li>
+       <li><a routerLink='/dashboard'>BicycleListing</a></li>
+      <li><a routerLink='/newListing'>Create a Listing</a></li>
+      <li *ngIf="isAuthed()"><a (click)="logout()">Logout</a></li>
+
+    </ul>
+  </div>
+</nav>
